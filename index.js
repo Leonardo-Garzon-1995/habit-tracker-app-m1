@@ -1,0 +1,44 @@
+const habitForm = document.querySelector(".input-section")
+const inputHabit = document.querySelector("#input-habit")
+const addBtn = document.querySelector(".add-btn")
+const habitTextItem = document.querySelector(".habit-text")
+
+let allItems = []
+
+habitForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    addHabit()
+})
+
+// add habit item 
+function addHabit() {
+    let habitText = inputHabit.value
+    if (habitText.length > 0) {
+        const inputObj = {
+            text: habitText,
+            completed: false
+        }
+        allItems.push(inputObj)
+    }
+    console.log(habitText)
+    console.log(allItems)
+
+    createHabitItem(habitText)
+    inputHabit.value = "" 
+}
+
+function createHabitItem(text) {
+    const habitsList = document.querySelector(".habits-list")
+    const newHabit = document.createElement("li")
+    newHabit.classList.add("habit-item")
+    newHabit.innerHTML = `
+        <input class="input-checkbox" type="checkbox" id="habit-1">
+        <label for="habit-1" class="habit-text">${text}</label>
+        <button class="delete-item-btn">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+    `
+    habitsList.appendChild(newHabit)
+}
+
+

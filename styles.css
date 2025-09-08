@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 3px solid red; */
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+h1 {
+    margin: 20px;
+    color: navy;
+}
+
+.input-section {
+    border: 2px solid darkorange;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#input-habit {
+    width: 300px;
+    padding: 5px;
+    background: none;
+    border: none;
+    outline: none;
+    color: navy;
+    font-weight: bold;
+}
+
+.add-btn {
+    font-size: 1.1rem;
+    background: darkorange;
+    border-radius: 15px;
+    border: 2px solid darkorange;
+    padding: 5px 10px;
+    color: navy;
+    transition:  200ms ease
+}
+
+.add-btn:hover {
+    background: transparent;
+    color: darkorange;
+}
+
+.add-btn:active {
+    transform: scale(0.9);
+}
+
+
+.listHabits-display {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
+    width: 90%;
+    padding: 10px;
+}
+
+ul {
+    width: 85%;
+}
+
+.habit-item {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid  navy;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(0, 0, 128, 0.8);
+    margin: 10px auto;
+}
+
+.input-checkbox {
+    border-radius: 50%;
+}
+
+.habit-text {
+    color: darkorange;
+    font-size: 1.2rem;
+}
+
+.delete-item-btn {
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    color: darkorange;
+    border: none;
+    transition: 200ms ease;
+    font-size: 1.1em;
+}
+
+.delete-item-btn:hover {
+    color: red;
+}
+
+.delete-item-btn:active {
+    transform: scale(0.9);
+}
+
