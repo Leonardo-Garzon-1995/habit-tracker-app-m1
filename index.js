@@ -8,6 +8,7 @@ let allItems = []
 habitForm.addEventListener("submit", (e) => {
     e.preventDefault()
     addHabit()
+    saveItems()
 })
 
 // add habit item 
@@ -39,6 +40,12 @@ function createHabitItem(text) {
         </button>
     `
     habitsList.appendChild(newHabit)
+}
+
+function saveItems() {
+
+    localStorage.setItem("habit-item", JSON.stringify(allItems))
+    
 }
 
 
