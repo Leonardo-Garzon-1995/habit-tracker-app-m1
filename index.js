@@ -9,6 +9,7 @@ habitForm.addEventListener("submit", (e) => {
     e.preventDefault()
     addHabit()
     saveItems()
+    updateList()
 })
 
 // add habit item 
@@ -43,9 +44,24 @@ function createHabitItem(text) {
 }
 
 function saveItems() {
-
     localStorage.setItem("habit-item", JSON.stringify(allItems))
-    
 }
+
+function getItems() {
+    const savedItems = localStorage.getItem("habit-item")
+    if (savedItems) {
+        allItems = JSON.parse(savedItems)
+    }
+}
+
+function updateList() {
+    const habitsList = document.querySelector(".habits-list")
+    habitsList.innerHTML = ""
+    allItems.forEach(item => {
+        createHabitItem(item.text)
+    })
+}
+
+
 
 
