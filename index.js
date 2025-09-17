@@ -5,11 +5,15 @@ const habitTextItem = document.querySelector(".habit-text")
 
 let allItems = []
 
+window.onload = () => {
+    getItems()
+    updateList()
+}
+
 habitForm.addEventListener("submit", (e) => {
     e.preventDefault()
     addHabit()
     saveItems()
-    updateList()
 })
 
 // add habit item 
@@ -62,6 +66,4 @@ function updateList() {
     })
 }
 
-
-
-
+localStorage.clear()
