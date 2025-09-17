@@ -111,3 +111,22 @@ ul {
     transform: scale(0.9);
 }
 
+.delete-all-btn {
+    font-size: 1.1rem;
+    background: navy;
+    border-radius: 15px;
+    border: 2px solid navy;
+    padding: 5px 10px;
+    color: darkorange;
+    transition: all 200ms ease
+}
+
+.delete-all-btn:hover {
+    background: transparent;
+    color: navy;
+}
+
+.delete-all-btn:active {
+    transform: scale(0.9);
+}
+
