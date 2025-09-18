@@ -5,10 +5,9 @@ const habitTextItem = document.querySelector(".habit-text")
 
 let allItems = []
 
-window.onload = () => {
-    getItems()
-    updateList()
-}
+window.addEventListener("DOMContentLoaded", () => {
+    getItems().then(() => updateList())
+})
 
 habitForm.addEventListener("submit", (e) => {
     e.preventDefault()
