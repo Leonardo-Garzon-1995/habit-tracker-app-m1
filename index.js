@@ -26,9 +26,6 @@ function addHabit() {
         }
         allItems.push(inputObj)
     }
-    console.log(habitText)
-    console.log(allItems)
-
     createHabitItem(habitText)
     inputHabit.value = "" 
 }
@@ -66,4 +63,3 @@ function updateList() {
     })
 }
 
-localStorage.clear()
