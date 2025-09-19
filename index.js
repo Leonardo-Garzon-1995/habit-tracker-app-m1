@@ -2,6 +2,7 @@ const habitForm = document.querySelector(".input-section")
 const inputHabit = document.querySelector("#input-habit")
 const addBtn = document.querySelector(".add-btn")
 const habitTextItem = document.querySelector(".habit-text")
+const deleteAllBtn = document.querySelector(".delete-all-btn")
 
 let allItems = []
 
@@ -62,4 +63,10 @@ function updateList() {
         createHabitItem(item.text)
     })
 }
+
+deleteAllBtn.addEventListener("click", () => {
+    allItems = []
+    updateList()
+    localStorage.clear()
+})
 
