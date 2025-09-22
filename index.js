@@ -25,9 +25,10 @@ function addHabit() {
             text: habitText,
             completed: false
         }
-        allItems.push(inputObj)
+        allItems.push(inputObj) 
+        createHabitItem(habitText)
     }
-    createHabitItem(habitText)
+    
     inputHabit.value = "" 
 }
 
@@ -70,3 +71,4 @@ deleteAllBtn.addEventListener("click", () => {
     localStorage.clear()
 })
 
+console.log (allItems)
