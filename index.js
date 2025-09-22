@@ -71,4 +71,3 @@ deleteAllBtn.addEventListener("click", () => {
     localStorage.clear()
 })
 
-console.log (allItems)
