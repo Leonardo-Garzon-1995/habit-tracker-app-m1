@@ -5,6 +5,8 @@ const habitTextItem = document.querySelector(".habit-text")
 const deleteAllBtn = document.querySelector(".delete-all-btn")
 
 let allItems = []
+let itemId = 0
+
 
 window.addEventListener("DOMContentLoaded", () => {
     getItems()
@@ -22,23 +24,31 @@ function addHabit() {
     let habitText = inputHabit.value
     if (habitText.length > 0) {
         const inputObj = {
+            id: generateId(),
             text: habitText,
             completed: false
         }
         allItems.push(inputObj) 
-        createHabitItem(habitText)
+        createHabitItem(inputObj)
     }
     
     inputHabit.value = "" 
 }
 
-function createHabitItem(text) {
+function generateId() {
+    itemId++
+    return itemId
+}
+
+
+function createHabitItem(item) {
     const habitsList = document.querySelector(".habits-list")
     const newHabit = document.createElement("li")
     newHabit.classList.add("habit-item")
+    let attrChecked = item.completed ? "checked" : ""
     newHabit.innerHTML = `
-        <input class="input-checkbox" type="checkbox" id="habit-1">
-        <label for="habit-1" class="habit-text">${text}</label>
+        <input class="input-checkbox" type="checkbox" id="habit-${item.id}" ${attrChecked}>
+        <label for="habit-1" class="habit-text">${item.text}</label>
         <button class="delete-item-btn">
             <i class="fa-solid fa-trash"></i>
         </button>
@@ -60,8 +70,8 @@ function getItems() {
 function updateList() {
     const habitsList = document.querySelector(".habits-list")
     habitsList.innerHTML = ""
-    allItems.forEach(item => {
-        createHabitItem(item.text)
+    allItems.forEach(i=> {
+        createHabitItem(i.text)
     })
 }
 
