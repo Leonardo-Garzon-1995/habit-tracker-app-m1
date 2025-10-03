@@ -21,7 +21,7 @@ habitForm.addEventListener("submit", (e) => {
 
 // add habit item 
 function addHabit() {
-    let habitText = inputHabit.value
+    let habitText = inputHabit.value.trim()
     if (habitText.length > 0) {
         const inputObj = {
             id: generateId(),
@@ -36,10 +36,13 @@ function addHabit() {
 }
 
 function generateId() {
-    itemId++
+    for (let t of allItems) {
+        if (t.id === itemId) {
+            itemId++
+        }
+    }
     return itemId
 }
-
 
 function createHabitItem(item) {
     const habitsList = document.querySelector(".habits-list")
